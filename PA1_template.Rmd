@@ -80,7 +80,7 @@ steps.median.per.day.filled <- aggregate(steps ~ date, data = act.filled, FUN = 
 steps.per.day.filled <- cbind(steps.mean.per.day.filled, steps.median.per.day.filled$steps)
 names(steps.per.day.filled) <- c("date", "steps.mean", "steps.median")
 ```
-
+Imputting missing datd obviously _increases_ the daily total number of steps.
 
 
 

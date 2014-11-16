@@ -293,6 +293,8 @@ steps.per.day.filled &lt;- cbind(steps.mean.per.day.filled, steps.median.per.day
 names(steps.per.day.filled) &lt;- c(&quot;date&quot;, &quot;steps.mean&quot;, &quot;steps.median&quot;)
 </code></pre>
 
+<p>Imputting missing datd obviously <em>increases</em> the daily total number of steps.</p>
+
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
 
 <pre><code class="r">wd &lt;- c(&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;)
