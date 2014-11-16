@@ -33,7 +33,7 @@ dim(act.clean)
 
 ```r
 steps.tot.per.day <- aggregate(steps ~ date, data = act.clean, FUN = sum)
-plot(steps.tot.per.day$steps ~ steps.tot.per.day$date, type = "h",
+plot(as.Date(steps.tot.per.day$date), steps.tot.per.day$steps, type = "h", lwd = 5,
      xlab = "Date", ylab = "Total Number of Steps", main = "Activity Data with Missing Values Removed")
 ```
 
@@ -99,7 +99,7 @@ fillin <- function(x) {
 act.filled <- cbind(subset(act, select = c(-steps)), steps = apply(act[,c('steps', 'date')], 1, FUN = fillin))
 
 steps.tot.per.day.filled <- aggregate(steps ~ date, data = act.filled, FUN = sum)
-plot(steps.tot.per.day.filled$steps ~ steps.tot.per.day.filled$date, type = "h",
+plot(as.Date(steps.tot.per.day.filled$date), steps.tot.per.day.filled$steps, type = "h", lwd = 5,
      xlab = "Date", ylab = "Total Number of Steps", main = "Activity Data with Missing Values Replaced by Daily Average")
 ```
 
